@@ -356,16 +356,17 @@
     <h2 class="section-title">Key Projects</h2>
     <div class="cards">
       <div class="card">
-        <h3>Engage IoT Platform</h3>
-        <p>Scaled a BLE SDK to over 60,000 locations, enabling real-time smart lock communication.</p>
+        <h3>IoT Platform</h3>
+          <img src="iot.JPG" alt="IoT Platform">
+        </a>
+        <p>I successfully led the Mobile SDK and Device Provisioning App for Allegion’s IoT platform, enabling seamless access across AWS and Azure IoT. Delivered multiple releases by driving backlog strategy, aligning cross-functional teams, and translating product vision into actionable features—directly impacting platform scalability and user adoption across Android and iOS.</p>
       </div>
       <div class="card">
         <h3>Schlage Utility Software (Mobile App)</h3>
-        <a href="https://example.com/sus-project" target="_blank">
+        <a href="https://allegion.ca/content/dam/allegion-us-2/web-files/schlage/information-documents/Schlage_Utility_Software_SUS_Data_Sheet_113622.pdf" target="_blank">
           <img src="SUS.JPG" alt="Schlage Utility Software project screenshot">
         </a>
         <p>The SUS app is a modern upgrade to the legacy HHD tool, designed to set up and manage select Schlage electronic locks. I led the end-to-end requirement gathering and coordinated closely with hardware, firmware, and system test teams. Translated complex technical inputs into clear, actionable user stories and product features. Actively collaborated during sprint demos to refine the product based on real-time feedback.</p>
-        <a href="https://allegion.ca/content/dam/allegion-us-2/web-files/schlage/information-documents/Schlage_Utility_Software_SUS_Data_Sheet_113622.pdf" target="_blank">Schlage Utility Software</a>
       </div>
     </div>
   </section>
@@ -415,27 +416,51 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Let's Connect</h2>
-    <div class="contact-form">
-      <form>
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" id="name" required>
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" required>
-        </div>
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" required></textarea>
-        </div>
-        <button type="submit" class="cta-button" style="border: none; cursor: pointer;">Send Message</button>
-      </form>
-    </div>
-  </section>
+<!-- Contact Section -->
+<section id="contact">
+  <h2>Let's Connect</h2>
+  <div class="contact-form">
+    <form id="contactForm" onsubmit="return sendEmail()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="Your phone number" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Your message..." required></textarea>
+      </div>
+      <button type="submit" class="cta-button" style="border: none; cursor: pointer;">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<script>
+  function sendEmail() {
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    if (!name || !email || !phone || !message) {
+      alert('Please fill out all fields.');
+      return false;
+    }
+
+    const subject = encodeURIComponent("New message from portfolio site");
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`);
+    window.location.href = `mailto:ashish.kashyap12@gmail.com?subject=${subject}&body=${body}`;
+
+    return false; // Prevent actual form submission
+  }
+</script>
 
   <footer>
     <p>© 2025 Ashish Kashyap · <a href="mailto:ashish.kashyap12@gmail.com">ashish.kashyap12@gmail.com</a></p>
