@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ashish Kashyap – Product Owner Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="favicon.png" sizes="192x192">
+  <style>
+    /* Navigation Styles */
+    .navbar {
+      position: sticky;
+      top: 0;
+      background: rgba(13, 71, 161, 0.95);
+      backdrop-filter: blur(5px);
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      margin: 0;
+      padding: 15px 0;
+      flex-wrap: wrap;
+    }
+    
+    .nav-links li {
+      margin: 0 15px;
+    }
+    
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 8px 15px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+    
+    .nav-links a:hover {
+      background: rgba(255,255,255,0.2);
+      transform: translateY(-2px);
+    }
+    
+    /* Call to Action Styles */
+    .cta-button {
+      display: inline-block;
+      background: #0d47a1;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 20px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    .cta-button:hover {
+      background: #1565c0;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+    
+    .section-cta {
+      text-align: center;
+      margin-top: 40px;
+    }
+    
+    /* Existing Styles */
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #f2f6fa 0%, #e9eff5 100%);
+      color: #2c3e50;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: linear-gradient(90deg, #0d47a1, #1976d2);
+      color: white;
+      padding: 100px 20px 80px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+    header img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 5px solid #fff;
+      object-fit: cover;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    header h1 {
+      font-size: 2.8rem;
+      margin: 0.3rem 0;
+    }
+    header p {
+      font-size: 1.25rem;
+      font-weight: 500;
+    }
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    h2 {
+      color: #0d47a1;
+      text-align: center;
+      margin-bottom: 50px;
+      font-size: 2rem;
+      position: relative;
+    }
+    h2::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: #1976d2;
+      margin: 20px auto 0;
+      border-radius: 2px;
+    }
+    .logos, .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+    .logos img {
+      height: 60px;
+      object-fit: contain;
+      filter: grayscale(100%);
+      transition: filter 0.3s ease;
+    }
+    .logos img:hover {
+      filter: none;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 30px;
+      width: 320px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    .card h3 {
+      color: #1976d2;
+      margin-top: 0;
+    }
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      background: #0d47a1;
+      color: white;
+    }
+    footer a {
+      color: #ffd54f;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    
+    /* Image Box Grid Styles */
+    .skills-container {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 20px 0;
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    .skill-box {
+      flex: 0 0 auto;
+      width: 280px;
+      background: white;
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    
+    .skill-box img {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 20px;
+      object-fit: contain;
+    }
+    
+    .skill-box h3 {
+      color: #0d47a1;
+      margin: 0 0 15px 0;
+      font-size: 1.3rem;
+      line-height: 1.3;
+    }
+    
+    .skill-box p {
+      color: #555;
+      margin: 0;
+      line-height: 1.5;
+    }
+    
+    /* Contact Form Styles */
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .form-group textarea {
+      min-height: 150px;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .skill-box {
+        width: 240px;
+      }
+      .nav-links {
+        justify-content: space-around;
+      }
+      .nav-links li {
+        margin: 5px;
+      }
+      header {
+        padding: 80px 20px 60px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header>
+    <img src="ashish-profile-pic.jpg" alt="Ashish Kashyap">
+    <h1>Ashish Kashyap</h1>
+    <p>Senior Product Owner | SaaS & PaaS | Agile | Data-Driven Innovation</p>
+    <a href="#contact" class="cta-button">Let's Connect</a>
+  </header>
+
+  <!-- About Me Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="about-box">
+      <p>I'm a results-oriented Product Owner with 17+ years of experience in IT and over 5 years leading product strategy for SaaS and PaaS platforms. I specialize in aligning business goals with user-centered product experiences. My strength lies in combining Agile practices with data-driven insights to prioritize effectively, deliver fast, and build solutions that create measurable value. Known for my quick learning, strong ownership, and collaborative approach, I enjoy working across global teams to turn ideas into scalable, real-world products.</p>
+      <p>Outside of work, I'm passionate about swimming and am a certified swimming instructor. This role has taught me discipline, focus, and the value of continuous improvement—qualities I also apply to my professional career.</p>
+    </div>
+    <div class="section-cta">
+      <a href="#strengths" class="cta-button">View My Strengths</a>
+    </div>
+  </section>
+
+  <!-- Strengths Section -->
+  <section id="strengths">
+    <h2>My Strengths</h2>
+    <div class="skills-container">
+      <div class="skill-box">
+        <img src="https://priyarani.in/wp-content/uploads/2025/01/pixel-perfect-1.png" alt="Dedication">
+        <h3>Dedication</h3>
+        <p>Commitment to deliver high-quality results through a meticulous and customer-centric approach</p>
+      </div>
+      
+      <div class="skill-box">
+        <img src="https://priyarani.in/wp-content/uploads/2025/01/pixel-perfect-1.png" alt="Strategic Vision">
+        <h3>Strategic Vision & Problem-Solving</h3>
+        <p>Clients appreciate my strategic vision and problem-solving skills, which help me address challenges and deliver impactful, forward-thinking solutions</p>
+      </div>
+      
+      <div class="skill-box">
+        <img src="https://priyarani.in/wp-content/uploads/2025/01/pixel-perfect-1.png" alt="Detail Oriented">
+        <h3>Detail Oriented Execution</h3>
+        <p>Clients value my keen attention to detail, as it ensures every element of the product is carefully considered and delivered with precision</p>
+      </div>
+      
+      <div class="skill-box">
+        <img src="https://priyarani.in/wp-content/uploads/2025/01/pixel-perfect-1.png" alt="Quick Learner">
+        <h3>Quick Learner</h3>
+        <p>Eagerness to learn and adapt, I like to take on new challenges and deliver exceptional outcomes</p>
+      </div>
+    </div>
+    <div class="section-cta">
+      <a href="#companies" class="cta-button">See My Experience</a>
+    </div>
+  </section>
+
+  <!-- Companies Section -->
+  <section id="companies">
+    <h2>Companies I've Worked With</h2>
+    <div class="logos">
+      <img src="cisco-logo.JPG" alt="Cisco">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Hewlett_Packard_Enterprise_logo.svg" alt="HP">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Mercedes-Benz_Logo_2010.svg" alt="Mercedes-Benz">
+      <img src="https://upload.wikimedia.org/wikipedia/en/e/e4/Wipro_Logo.svg" alt="Wipro">
+      <img src="https://www.allegion.com/content/dam/allegion/images/allegion-logo.svg" alt="Allegion">
+    </div>
+    <div class="section-cta">
+      <a href="#projects" class="cta-button">Explore My Projects</a>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <!-- Projects Adding -->
+  <section id="projects">
+    <h2 class="section-title">Key Projects</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>IoT Platform</h3>
+          <img src="iot.JPG" alt="IoT Platform">
+        </a>
+        <p>I successfully led the Mobile SDK and Device Provisioning App for Allegion’s IoT platform, enabling seamless access across AWS and Azure IoT. Delivered multiple releases by driving backlog strategy, aligning cross-functional teams, and translating product vision into actionable features—directly impacting platform scalability and user adoption across Android and iOS.</p>
+      </div>
+      <div class="card">
+        <h3>Schlage Utility Software (Mobile App)</h3>
+        <a href="https://allegion.ca/content/dam/allegion-us-2/web-files/schlage/information-documents/Schlage_Utility_Software_SUS_Data_Sheet_113622.pdf" target="_blank">
+          <img src="SUS.JPG" alt="Schlage Utility Software project screenshot">
+        </a>
+        <p>The SUS app is a modern upgrade to the legacy HHD tool, designed to set up and manage select Schlage electronic locks. I led the end-to-end requirement gathering and coordinated closely with hardware, firmware, and system test teams. Translated complex technical inputs into clear, actionable user stories and product features. Actively collaborated during sprint demos to refine the product based on real-time feedback.</p>
+      </div>
+    </div>
+  </section>
+  <!-- Projects Adding -->
+  
+
+  <!-- Testimonials Section -->
+  <section id="testimonials">
+    <h2>Testimonials</h2>
+    <div class="cards">
+      <div class="card">
+        <p>"Ashish is a strategic Product Owner with strong ownership and empathy. His product sense and delivery discipline are top-notch."</p>
+        <p><strong>– Rahul Mehta, Engineering Manager</strong></p>
+      </div>
+      <div class="card">
+        <p>"One of the most collaborative professionals I've worked with. Ashish understands both business and tech deeply."</p>
+        <p><strong>– Anjali Rao, UX Lead</strong></p>
+      </div>
+    </div>
+    <div class="section-cta">
+      <a href="#blog" class="cta-button">Read My Blog</a>
+    </div>
+  </section>
+
+  <!-- Blog Section -->
+  <section id="blog">
+    <h2>Blog Insights</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Agile Backlog Management</h3>
+        <p>Real-world tips for prioritizing with confidence across technical and business stakeholders.</p>
+        <a href="#" class="cta-button" style="margin-top: 15px; padding: 8px 15px;">Read Article</a>
+      </div>
+      <div class="card">
+        <h3>Driving SaaS Roadmaps</h3>
+        <p>How I aligned cross-functional teams to build value-driven platform features.</p>
+        <a href="#" class="cta-button" style="margin-top: 15px; padding: 8px 15px;">Read Article</a>
+      </div>
+      <div class="card">
+        <h3>Working with C-Suite</h3>
+        <p>Learnings from presenting metrics and outcomes that resonate with executive leadership.</p>
+        <a href="#" class="cta-button" style="margin-top: 15px; padding: 8px 15px;">Read Article</a>
+      </div>
+    </div>
+    <div class="section-cta">
+      <a href="#contact" class="cta-button">Get In Touch</a>
+    </div>
+  </section>
+
+<!-- Contact Section -->
+<section id="contact">
+  <h2>Let's Connect</h2>
+  <div class="contact-form">
+    <form id="contactForm" onsubmit="return sendEmail()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="Your phone number" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Your message..." required></textarea>
+      </div>
+      <button type="submit" class="cta-button" style="border: none; cursor: pointer;">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<script>
+  function sendEmail() {
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    if (!name || !email || !phone || !message) {
+      alert('Please fill out all fields.');
+      return false;
+    }
+
+    const subject = encodeURIComponent("New message from portfolio site");
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`);
+    window.location.href = `mailto:ashish.kashyap12@gmail.com?subject=${subject}&body=${body}`;
+
+    return false; // Prevent actual form submission
+  }
+</script>
+
+  <footer>
+    <p>© 2025 Ashish Kashyap · <a href="mailto:ashish.kashyap12@gmail.com">ashish.kashyap12@gmail.com</a></p>
+    <p style="margin-top: 10px;">
+      <a href="#about" style="margin: 0 10px;">About</a>
+      <a href="#testimonials" style="margin: 0 10px;">Testimonials</a>
+      <a href="#blog" style="margin: 0 10px;">Blog</a>
+      <a href="#contact" style="margin: 0 10px;">Contact</a>
+    </p>
+  </footer>
+</body>
+</html>
