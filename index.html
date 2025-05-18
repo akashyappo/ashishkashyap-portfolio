@@ -416,36 +416,17 @@
   </section>
 
 <!-- Contact Section -->
-<!--section id="contact">
-  <h2>Let's Connect</h2>
-  <div class="contact-form">
-    <form id="contactForm" onsubmit="return sendEmail()">
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Your name" required>
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="you@example.com" required>
-      </div>
-      <div class="form-group">
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" placeholder="Your phone number" required>
-      </div>
-      <div class="form-group">
-        <label for="message">Message</label>
-        <textarea id="message" name="message" placeholder="Your message..." required></textarea>
-      </div>
-      <button type="submit" class="cta-button" style="border: none; cursor: pointer;">Send Message</button>
-    </form>
-  </div>
-</section-->
-
-<!-- Contact Section -->
 <section id="contact">
   <h2>Let's Connect</h2>
   <div class="contact-form">
-    <form id="contactForm" onsubmit="return sendEmail()">
+    <form action="https://formsubmit.co/ashish.kashyap12@gmail.com" method="POST">
+      <!-- Add a hidden input for subject -->
+      <input type="hidden" name="_subject" value="New message from portfolio site">
+      <!-- Disable captcha (optional) -->
+      <input type="hidden" name="_captcha" value="false">
+      <!-- Redirect after submit (optional) -->
+      <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
+
       <div class="form-group">
         <label for="name">Name</label>
         <input type="text" id="name" name="name" placeholder="Your name" required>
@@ -467,25 +448,6 @@
   </div>
 </section>
 
-<script>
-  function sendEmail() {
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const message = document.getElementById('message').value.trim();
-
-    if (!name || !email || !phone || !message) {
-      alert('Please fill out all fields.');
-      return false;
-    }
-
-    const subject = encodeURIComponent("New message from portfolio site");
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`);
-    window.location.href = `mailto:ashish.kashyap12@gmail.com?subject=${subject}&body=${body}`;
-
-    return false; // Prevent actual form submission
-  }
-</script>
 
   <footer>
     <p>© 2025 Ashish Kashyap · <a href="mailto:ashish.kashyap12@gmail.com">ashish.kashyap12@gmail.com</a></p>
