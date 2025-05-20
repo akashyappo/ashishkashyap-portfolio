@@ -268,6 +268,32 @@
         padding: 80px 20px 60px;
       }
     }
+    
+.cards {
+  display: flex;
+  flex-wrap: nowrap; /* Use wrap if you want it responsive */
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.card {
+  flex: 0 0 276px;
+  border: 1px solid #ccc;
+  padding: 16px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 276 / 246;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+    
   </style>
 </head>
 <body>
@@ -357,55 +383,61 @@
     <div class="cards">
       <div class="card">
         <h3>IoT Platform</h3>
-          <img src="IOT.png" alt="IoT Platform" width="276" height="246">
+          <img src="IOT.png" alt="IoT Platform">
         <p>Successfully led the Mobile SDK and Device Provisioning App for Allegion’s IoT platform, enabling seamless access across AWS and Azure IoT. Delivered multiple releases by driving backlog strategy, aligning cross-functional teams, and translating product vision into actionable features—directly impacting platform scalability and user adoption across Android and iOS.</p>
       </div>
       <div class="card">
         <h3>Schlage Utility Software (Mobile App)</h3>
         <a href="https://allegion.ca/content/dam/allegion-us-2/web-files/schlage/information-documents/Schlage_Utility_Software_SUS_Data_Sheet_113622.pdf" target="_blank">
-          <img src="SUS.JPG" alt="Schlage Utility Software project screenshot" width="276" height="246">
+          <img src="SUS.JPG" alt="Schlage Utility Software project screenshot">
         </a>
         <p>The SUS app is a modern upgrade to the legacy HHD tool, designed to set up and manage select Schlage electronic locks. I led the end-to-end requirement gathering and coordinated closely with hardware, firmware, and system test teams. Translated complex technical inputs into clear, actionable user stories and product features. Actively collaborated during sprint demos to refine the product based on real-time feedback.</p>
       </div>
       <div class="card">
         <h3>Engage Access Control</h3>
         <a href="https://commercial.schlage.com/en/products/software/engage-for-device-commissioning.html" target="_blank">
-          <img src="engage.png" alt="Engage Solution" width="276" height="246">
+          <img src="engage.png" alt="Engage Solution">
         </a>
         <p>Led the product lifecycle of Allegion’s Engage SaaS platform, delivering scalable mobile/web apps and APIs. Drove 90%+ on-time delivery, reduced sprint carryover by 30%, and enabled partner integrations—bridging tech execution with business strategy to enhance customer value.</p>
+      </div>
+       <div class="card">
+        <h3>Cisco UCCX</h3>
+        <a href="https://www.cisco.com/c/en/us/products/contact-center/unified-contact-center-express/index.html" target="_blank">
+          <img src="uccx.jpg" alt="Engage Solution">
+        </a>
+        <p>Led the dev team development teams' scrum ceremonies for hybrid contact center MVP for Cisco Unified Contact Center Express, enhancing omnichannel capabilities and securing $500K in early revenue. Helped UX and PMs in design and research boosting product adoption by 12% across 560 organizations through UX refresh and market analysis.</p>
       </div>
     </div>
   </section>
   <!-- Projects Adding -->
   
 
-  <!-- Testimonials Section -->
-  <section id="testimonials">
-    <h2>Testimonials</h2>
-    <div class="cards">
-      <div class="card">
-        <p>"Working with Ashish was seamless—he always came prepared with clear user stories and a deep understanding of user needs. His leadership in backlog grooming and agile ceremonies helped improve our sprint velocity by over 20%."</p>
-        <p><strong> Utkarsh M — Engineering Manager, Allegion IoT Team</strong></p>
-      </div>
+<!-- Testimonials Section -->
+<section id="testimonials">
+  <h2>Testimonials</h2>
+  <div class="cards">
+    <div class="card">
+      <p>"Working with Ashish was seamless—he always came prepared with clear user stories and a deep understanding of user needs. His leadership in backlog grooming and agile ceremonies helped improve our sprint velocity by over 20%."</p>
+      <p><strong>Utkarsh M — Engineering Manager, Allegion IoT Team</strong></p>
     </div>
     <div class="card">
-        <p>"Ashish consistently turned complex business needs into actionable product features. His ownership of the Engage platform helped us launch several high-impact updates on time, improving customer satisfaction and partner engagement significantly."</p>
-        <p><strong>—Alan C, Senior Product Manager, Allegion</strong></p>
-      </div>
+      <p>"Ashish consistently turned complex business needs into actionable product features. His ownership of the Engage platform helped us launch several high-impact updates on time, improving customer satisfaction and partner engagement significantly."</p>
+      <p><strong>Alan C — Senior Product Manager, Allegion</strong></p>
     </div>
-      <div class="card">
-        <p>"Ashish is a strategic Product Owner with strong ownership and empathy. His product sense and delivery discipline are top-notch."</p>
-        <p><strong>– Rahul Mehta, Engineering Manager</strong></p>
-      </div>
-      <div class="card">
-        <p>"One of the most collaborative professionals I've worked with. Ashish understands both business and tech deeply."</p>
-        <p><strong>– Anjali Rao, UX Lead</strong></p>
-      </div>
+    <div class="card">
+      <p>"Ashish is a strategic Product Owner with strong ownership and empathy. His product sense and delivery discipline are top-notch."</p>
+      <p><strong>Rahul Mehta — Engineering Manager</strong></p>
     </div>
-    <div class="section-cta">
-      <a href="#blog" class="cta-button">Read My Blog</a>
+    <div class="card">
+      <p>"One of the most collaborative professionals I've worked with. Ashish understands both business and tech deeply."</p>
+      <p><strong>Anjali Rao — UX Lead</strong></p>
     </div>
-  </section>
+  </div>
+  <div class="section-cta">
+    <a href="#blog" class="cta-button">Read My Blog</a>
+  </div>
+</section>
+
 
   <!-- Blog Section -->
   <section id="blog">
